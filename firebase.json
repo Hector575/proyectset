@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ProyectSet",
+      "public": "dist/ProyectSet",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
