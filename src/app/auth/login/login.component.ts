@@ -41,7 +41,7 @@ export class LoginComponent {
 
   private checkUserIsVerified(user: User) {
     if (user && user.emailVerified) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/Inicio']);
     } else if (user) {
       this.router.navigate(['/verification-email']);
     } else {
