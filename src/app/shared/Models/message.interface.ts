@@ -14,6 +14,12 @@ export interface MessageI {
     venta:string;
     renta:string;
     area:string
+    uid: string;
+    Renta:string;
+    Moneda:string;
+    Venta:string;
+    Banos:string;
+    Habitaciones:string;
 
 
 

@@ -345,14 +345,107 @@
     
   
   </div>
+  <div class="form-group col-md-6">
+    <label for="inputPassword4"><h6><strong>Monto de renta aprox.</strong></h6></label>
+      <select class="form-control"  formControlName="Renta" placeholder=" Renta">
+        <option>5k renta</option>
+        <option>9K Renta</option>
+        <option>30K Renta</option>
+        <option>70K Renta</option>
+        <option>.15M Renta</option>
+        <option>.35M Renta</option>
+        <option>.70M Renta</option>
+        <option>.9M+ Renta</option>
+      </select>
+      <div class="alert-danger" *ngIf="Renta.invalid && (Renta.dirty || Renta.touched)">
+        <div class="container-error-message" *ngIf="Renta.errors.required">
+          Selecciona un monto de renta
+        </div>
+        <div class="container-error-message" *ngIf="Renta.errors.minlength">
+          Selecciona un monto de renta
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group col-md-6">
+      <label for="inputPassword4"><h6><strong>Moneda que utilizas</strong></h6></label>
+        <select class="form-control"  formControlName="Moneda" placeholder=" Moneda">
+          <option>$ MX</option>
+           <option>$ US</option>
+           <option>€ Euro</option>
+          </select>
+      <div class="alert-danger" *ngIf="Moneda.invalid && (Moneda.dirty || Moneda.touched)">
+        <div class="container-error-message" *ngIf="Moneda.errors.required">
+              Selecciona tipo de moneda
+        </div>
+        <div class="container-error-message" *ngIf="Moneda.errors.minlength">
+          Selecciona tipo de moneda.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group col-md-6">
+        <label for="inputPassword4"><h6><strong>Monto de venta aprox.</strong></h6></label>
+          <select class="form-control"  formControlName="Venta" placeholder=" Venta">
+            <option>.5M Venta</option>
+            <option>1.1M Venta</option>
+            <option>2.5M Venta</option>
+            <option>6M Venta</option>
+            <option>15M Venta</option>
+            <option>50M Venta</option>
+            <option>500M Venta</option>
+            <option>999M+ Venta</option>
+          </select>
+          <div class="alert-danger" *ngIf="Venta.invalid && (Venta.dirty || Venta.touched)">
+            <div class="container-error-message" *ngIf="Venta.errors.required">
+              Selecciona un monto de venta
+            </div>
+            <div class="container-error-message" *ngIf="Venta.errors.minlength">
+              Selecciona un monto de venta
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><h6><strong> Baños de la propiedad</strong></h6></label>
+            <select class="form-control"  formControlName="Banos" placeholder="Banos">
+              <option>3 Baños</option>
+               <option>5 Baños</option>
+               <option>9+ Baños</option>
+              </select>
+          <div class="alert-danger" *ngIf="Banos.invalid && (Banos.dirty || Banos.touched)">
+            <div class="container-error-message" *ngIf="Banos.errors.required">
+                  Selecciona cuantos baños tiene tu propiedad
+            </div>
+            <div class="container-error-message" *ngIf="Banos.errors.minlength">
+              Selecciona cuantos baños tiene tu propiedad
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group col-md-6">
+            <label for="inputPassword4"><h6><strong>Habitaciones de la propiedad</strong></h6></label>
+              <select class="form-control"  formControlName="Habitaciones" placeholder=" Habitaciones">
+                <option>3 Habitaciones</option>
+                 <option>5 Habitaciones</option>
+                 <option>9+ Habitaciones</option>
+                </select>
+            <div class="alert-danger" *ngIf="Habitaciones.invalid && (Habitaciones.dirty || Habitaciones.touched)">
+              <div class="container-error-message" *ngIf="Habitaciones.errors.required">
+                    Selecciona cuantas habitaciones tiene su propiedad
+              </div>
+              <div class="container-error-message" *ngIf="Habitaciones.errors.minlength">
+                Selecciona cuantas habitaciones tiene su propiedad
+                </div>
+              </div>
+            </div>
     
   
   
   
   
   
-      <button type="submit"  class="btn btn-primary btn-lg btn-block" [disabled]="!contactForm.valid"><button type="button" class="btn btn-primary btn-lg btn-block">Guardar informacion</button></button>
+      <button type="submit"  class="btn btn-primary btn-lg btn-block" [disabled]="!contactForm.valid" routerLink="/CargaDeIne"><button type="button" class="btn btn-primary btn-lg btn-block">Guardar informacion</button></button>
       <hr>
-      <button type="submit" class="btn btn-primary btn-lg btn-block" routerLink="/CargaDeIne"  >Continuar</button>
     </form>
   </div>

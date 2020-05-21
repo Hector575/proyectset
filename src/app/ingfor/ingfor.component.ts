@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/auth/services/data-db.service';
+import { User } from '@app/shared/models/user.interface';
+import { AngularFirestoreDocument } from '@angular/fire/firestore/public_api';
 
 @Component({
   selector: 'IngforComponent',
@@ -13,6 +15,7 @@ export class IngforComponent {
 
   // tslint:disable-next-line: max-line-length
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  afs: any;
 
 
   constructor(private dbData: DataService) {
@@ -34,6 +37,12 @@ export class IngforComponent {
   get venta() {return this.contactForm.get( 'venta');}
   get renta() {return this.contactForm.get( 'renta');}
   get area() {return this.contactForm.get( 'area');}
+  get Renta() { return this.contactForm.get('Renta'); }
+  get Moneda() { return this.contactForm.get('Moneda'); }
+  get Venta() { return this.contactForm.get('Venta'); }
+  get Banos() { return this.contactForm.get('Banos'); }
+  get Habitaciones() { return this.contactForm.get('Habitaciones'); }
+  
 
   createForm() {
     return new FormGroup({
@@ -52,6 +61,11 @@ export class IngforComponent {
       venta: new FormControl('', [Validators.required, Validators.minLength(3)]),
       renta: new FormControl('', [Validators.required, Validators.minLength(3)]),
       area: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      Renta: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      Moneda: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      Venta: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      Banos: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      Habitaciones: new FormControl('', [Validators.required, Validators.minLength(3)]),
     });
   }
 
@@ -65,5 +79,6 @@ export class IngforComponent {
       this.onResetForm();
     }
   }
+  
 
 }
