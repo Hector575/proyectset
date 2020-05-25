@@ -1,4 +1,5 @@
 export interface MessageI {
+    uid: string;
     email: string;
     name: string;
     Apellido: string;
@@ -14,13 +15,11 @@ export interface MessageI {
     venta:string;
     renta:string;
     area:string
-    uid: string;
     Renta:string;
     Moneda:string;
     Venta:string;
     Banos:string;
     Habitaciones:string;
-
 
 
   }

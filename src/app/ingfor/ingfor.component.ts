@@ -10,6 +10,7 @@ import { AngularFirestoreDocument } from '@angular/fire/firestore/public_api';
   styleUrls: ['./ingfor.component.css']
 })
 export class IngforComponent {
+  
 
   public contactForm: FormGroup;
 
@@ -18,7 +19,9 @@ export class IngforComponent {
   afs: any;
 
 
-  constructor(private dbData: DataService) {
+  constructor
+  
+  (private dbData: DataService) {
     this.contactForm = this.createForm();
   }
 
@@ -68,6 +71,7 @@ export class IngforComponent {
       Habitaciones: new FormControl('', [Validators.required, Validators.minLength(3)]),
     });
   }
+  
 
   onResetForm(): void {
     this.contactForm.reset();

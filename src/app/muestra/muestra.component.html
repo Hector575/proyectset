@@ -2,19 +2,15 @@
 
   <div class="card-columns">
 
-    <div class="card" style="width: 18rem;" *ngFor="let MessageI of MessageI | async">
-        <div class="card-body">
+    <div class="card" style="width: 18rem;" *ngFor="let inmueble of inmubles$ | async">
+        <div class="card-body" >
             <img class="card-img-top" src="assets/drop-images.png">
             <h4 class="card-title">Inmueble</h4>
-            <h5 class="card-title">{{ MessageI.Estado }}</h5>
-            <h5 class="card-title">{{ MessageI.ciudad }}</h5>
-            <h5 class="card-title">{{ MessageI.Cp }}</h5>
-            <h5 class="card-title">{{ MessageI.colonia }}</h5>
-            <h5 class="card-title">{{ MessageI.calle }}</h5>
-            <h5 class="card-title">{{ MessageI.Renta }}</h5>
-            <h5 class="card-title">{{ MessageI.Moneda }}</h5>
-            <h5 class="card-title">{{ MessageI.Venta }}</h5>
-            <h5 class="card-title">{{ MessageI.Banos }}</h5>
+            <h5 class="card-title">{{inmueble.email }}</h5>
+            <h5 class="card-title">{{inmueble.calle }}</h5>
+            <h5 class="card-title">{{inmueble.Cp }}</h5>
+            <!-- <h5 class="card-title">{{ user?.uid }}</h5>
+            <h5 class="card-title">{{ user?.photoURL }}</h5> -->
             <a href="#" class="btn btn-primary">Ver post</a>
         </div>
     </div>
