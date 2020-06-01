@@ -20,6 +20,8 @@ import { PdfGoldRentaComponent } from './Broker/pdf-gold-renta/pdf-gold-renta.co
 import { PdfDiamondRentaComponent } from './Broker/pdf-diamond-renta/pdf-diamond-renta.component';
 import { PdfDiamondVentaComponent } from './Broker/pdf-diamond-venta/pdf-diamond-venta.component';
 import { MuestraComponent } from './muestra/muestra.component';
+import { InfDeRegisComponent } from './Registra/inf-de-regis/inf-de-regis.component';
+import { BusquedaComponent } from './Registra/busqueda/busqueda.component';
 
 
 const routes: Routes = [
@@ -119,6 +121,14 @@ const routes: Routes = [
   {
     path: 'MuestraDeArt',
     component: MuestraComponent, canActivate: [CanSuscriptorGuard],
+  },
+  {
+    path: 'InfDeRegis',
+    component: InfDeRegisComponent, canActivate: [CanSuscriptorGuard],
+  },
+  {
+    path: 'Busqueda',
+    component: BusquedaComponent, canActivate: [CanSuscriptorGuard],
   },
 
 

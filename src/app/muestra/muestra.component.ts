@@ -6,7 +6,7 @@ import { User } from '@app/shared/models/user.interface';
 import { Router } from '@angular/router';
 import { DataService } from '@app/auth/services/data-db.service';
 
-export interface MessageI { calle: string; Cp:string; NumeroExterior:string; NumeroInterior:string; colonia:string; ciudad:string; Estado:string;  Renta:string; Moneda:string; Venta:string; Banos:string; Habitaciones:string;}
+export interface MessageI { CincoKRenta:boolean; calle: string; Cp:string; NumeroExterior:string; NumeroInterior:string; colonia:string; ciudad:string; Estado:string;  Renta:string; Moneda:string; Venta:string; Banos:string; Habitaciones:string;}
 
 
 @Component({

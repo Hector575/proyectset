@@ -1,18 +1,24 @@
-<div class="class=container mt-5"></div>
-
-  <div class="card-columns">
-
-    <div class="card" style="width: 18rem;" *ngFor="let inmueble of inmubles$ | async">
-        <div class="card-body" >
-            <img class="card-img-top" src="assets/drop-images.png">
-            <h4 class="card-title">Inmueble</h4>
-            <h5 class="card-title">{{inmueble.email }}</h5>
-            <h5 class="card-title">{{inmueble.calle }}</h5>
-            <h5 class="card-title">{{inmueble.Cp }}</h5>
-            <!-- <h5 class="card-title">{{ user?.uid }}</h5>
-            <h5 class="card-title">{{ user?.photoURL }}</h5> -->
-            <a href="#" class="btn btn-primary">Ver post</a>
-        </div>
-    </div>
-
+<div class="sidenav">
+  <a href="IngresaProc" ><h3>Ingresa</h3></a>
+  <hr>
+  <a href="InfDeRegis"><h3>Registra</h3></a>
+  <hr>
+  <a href="MuestraDeArt"><h3>Gestiona</h3></a>  <hr>
+</div>
+  
+  <!-- Page content -->
+  <div class="main">
+    <div class="class=container mt-5"></div>
+<table class="table table-hover">
+  <tbody>
+    <div class="class=container mt-5"></div>
+    <h2>Articulos en venta o renta <small> ... </small></h2>
+    <tr class="table-primary" *ngFor="let inmueble of inmubles$ | async">
+      <th scope="row">{{inmueble.email }}</th>
+      <td>{{inmueble.ciudad }}</td>
+      <td>{{inmueble.colonia }}</td>
+      <td>{{inmueble.calle }}</td>
+    </tr>
+  </tbody>
+</table> 
 </div>

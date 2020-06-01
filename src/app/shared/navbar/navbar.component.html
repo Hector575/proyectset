@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="\">Set99</a>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" id="heading">Set99</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -25,6 +25,7 @@
       <li class="nav-item">
         <a class="nav-link"> {{ user?.email }}</a>
       </li>
+      <button><i class="far fa-bell"></i></button>
     </ul>
     <ng-template #login>
       <ul class="navbar-nav mx-auto">
@@ -37,4 +38,4 @@
       </ul>
     </ng-template>
   </div>
-</nav>z
+</nav>

@@ -37,6 +37,8 @@ import { PdfGoldVentaComponent } from './Broker/pdf-gold-venta/pdf-gold-venta.co
 import { PdfDiamondVentaComponent } from './Broker/pdf-diamond-venta/pdf-diamond-venta.component';
 import { PdfDiamondRentaComponent } from './Broker/pdf-diamond-renta/pdf-diamond-renta.component';
 import { MuestraComponent } from './muestra/muestra.component';
+import { InfDeRegisComponent } from './Registra/inf-de-regis/inf-de-regis.component';
+import { BusquedaComponent } from './Registra/busqueda/busqueda.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { MuestraComponent } from './muestra/muestra.component';
     PdfDiamondVentaComponent,
     PdfDiamondRentaComponent,
     MuestraComponent,
+    InfDeRegisComponent,
+    BusquedaComponent,
   ],
   imports: [
     BrowserModule,

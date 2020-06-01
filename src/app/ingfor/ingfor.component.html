@@ -1,451 +1,408 @@
-
-  <div class="container mt-5">
-  <h4>Danos mas detalles <small> ... </small></h4>
+<div class="sidenav">
+  <a href="IngresaProc" ><h3>Ingresa</h3></a>
   <hr>
+  <a href="InfDeRegis"><h3>Registra</h3></a>
+  <hr>
+  <a href="MuestraDeArt"><h3>Gestiona</h3></a>  <hr>
+</div>
   
-    <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
-  
-  <div>
-  <div class="form-row">
-  <div class="form-group col-md-6">
-    <label class="inputEmail4">Nombre</label>
-    <input class="form-control" type="text" formControlName="name" placeholder="Your Name">
-      <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
-        <div class="container-error-message" *ngIf="name.errors.required">
-          Escribe tu nombre
-        </div>
-        <div class="container-error-message" *ngIf="name.errors.minlength">
-          Name must be at least 5 characters long.
-        </div>
-      </div>
-    </div>
-  
-  
-  <div class="col-md-3 mb-3">
-   <label for="inputPassword4">Calle</label>
-     <input class="form-control" type="text" formControlName="calle" placeholder="Calle">
-        <div class="alert-danger" *ngIf="calle.invalid && (calle.dirty || calle.touched)">
-          <div class="container-error-message" *ngIf="calle.errors.required">
-             Indica la calle
-          </div>
-          <div class="container-error-message" *ngIf="calle.errors.minlength">
-             Name must be at least 5 characters long.
-          </div>
-        </div>
-      </div>
-  
-  
-  <div class="col-md-3 mb-3">
-    <label for="inputPassword4">Codigo postal</label>
-      <input class="form-control" type="text" formControlName="Cp" placeholder="Codigo postal">
-       <div class="alert-danger" *ngIf="Cp.invalid && (Cp.dirty || Cp.touched)">
-         <div class="container-error-message" *ngIf="Cp.errors.required">
-              Es necesario el Codigo Postal
-         </div>
-         <div class="container-error-message" *ngIf="Cp.errors.minlength">
-              Name must be at least 5 characters long.
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  
-  
-      
-  
-  
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label class="inputEmail4">Apellidos</label>
-      <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido">
-       <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
-        <div class="container-error-message" *ngIf="apellido.errors.required">
-          Se requieren los apellidos
-        </div>
-        <div class="container-error-message" *ngIf="apellido.errors.minlength">
-          Name must be at least 5 characters long.
-        </div>
-      </div>
-     </div>
-    
-     <div class="col-md-3 mb-3">
-      <label for="inputPassword4">Numero exterior</label>
-      <input class="form-control" type="text" formControlName="NumeroExterior" placeholder=" NumeroExterior">
-       <div class="alert-danger" *ngIf="NumeroExterior.invalid && (NumeroExterior.dirty || NumeroExterior.touched)">
-        <div class="container-error-message" *ngIf="NumeroExterior.errors.required">
-          Numero de casa requerido
-        </div>
-        <div class="container-error-message" *ngIf="NumeroExterior.errors.minlength">
-          Name must be at least 5 characters long.
-        </div>
-      </div>
-    </div>
-  
-     
-  <div class="col-md-3 mb-3">
-   <label for="inputPassword4">Numero interior</label>
-    <input class="form-control" type="text" formControlName="NumeroInterior" placeholder=" NumeroInterior">
-      <div class="alert-danger" *ngIf="NumeroInterior.invalid && (NumeroInterior.dirty || NumeroInterior.touched)">
-        <div class="container-error-message" *ngIf="NumeroInterior.errors.required">
-          Numero de casa requerido
-        </div>
-         <div class="container-error-message" *ngIf="NumeroInterior.errors.minlength">
-            Name must be at least 5 characters long.
-         </div>
-      </div>
-     </div>
-   </div>
-  
-  
-  
-  
-  
-  
-  <div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="inputPassword4">Telefono</label>
-      <input class="form-control" type="text" formControlName="telefono" placeholder=" telefono">
-        <div class="alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
-        <div class="container-error-message" *ngIf="telefono.errors.required">
-            Numero telefonico necesario
-        </div>
-        <div class="container-error-message" *ngIf="telefono.errors.minlength">
-            Name must be at least 5 characters long.
-      </div>
-    </div>
-  </div>
-    
-  
-  <div class="col-md-3 mb-3">
-    <label for="inputPassword4">Colonia</label>
-      <input class="form-control" type="text" formControlName="colonia" placeholder=" Colonia">
-        <div class="alert-danger" *ngIf="colonia.invalid && (colonia.dirty || colonia.touched)">
-         <div class="container-error-message" *ngIf="colonia.errors.required">
-          Se requiere la colonia
-         </div>
-          <div class="container-error-message" *ngIf="colonia.errors.minlength">
-          Name must be at least 5 characters long.
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-md-3 mb-3">
-    <label for="inputPassword4">Ciudad</label>
-      <select class="form-control"  formControlName="ciudad" placeholder=" ciudad">
-        <option>Guerrero</option>
-        <option>Aguascalientes</option>
-        <option>>Campeche</option>
-        <option>Cancún</option>
-        <option>Celaya</option>
-        <option>Chetumal</option>
-        <option>Chihuahua</option>
-        <option>Chilpancingo</option>
-        <option>Ciudad del Carmen</option>
-        <option>Ciudad Obregón</option>
-        <option>Ciudad Victoria</option>
-        <option>Coatzacoalcos</option>
-        <option>Colima-Villa de Álvarez</option>
-        <option>Cuautla</option>
-        <option>Cuernavaca</option>
-        <option>Culiacán</option>
-        <option>Cárdenas</option>
-        <option>Córdoba</option>
-        <option>Durango</option>
-        <option>Ensenada</option>
-        <option>Guadalajara</option>
-        <option>Guanajuato</option>
-        <option>Guaymas</option>
-        <option>Hermosillo</option>
-        <option>Irapuato</option>
-        <option>Juárez</option>
-        <option>La Laguna</option>
-        <option>La Paz</option>
-        <option>La Piedad-Pénjamo</option>
-        <option>León</option>
-        <option>Los Cabos</option>
-        <option>Los Mochis</option>
-        <option>Manzanillo</option>
-        <option>Matamoros</option>
-        <option>Mazatlán</option>
-        <option>Mexicali</option>
-        <option>Minatitlán</option>
-        <option>Monclova-Frontera</option>
-        <option>Monterrey</option>
-        <option>Morelia</option>
-        <option>Mérida</option>
-        <option>Nuevo Laredo</option>
-        <option>Oaxaca</option>
-        <option>Ocotlán</option>
-        <option>Orizaba</option>
-        <option>Pachuca</option>
-        <option>Piedras Negras</option>
-        <option>Poza Rica</option>
-        <option>Puebla-Tlaxcala</option>
-        <option>Puerto Vallarta</option>
-        <option>Querétaro</option>
-        <option>Reynosa-Río Bravo</option>
-        <option>Rioverde-Ciudad Fernández</option>
-        <option>Salamanca</option>
-        <option>Saltillo</option>
-        <option>San Francisco del Rincón</option>
-        <option>San Juan del Río</option>
-        <option>>San Luis Potosí-Soledad</option>
-        <option>Tampico-Pánuco</option>
-        <option>Tapachula</option>
-        <option>Tecomán</option>
-        <option>Tehuacán</option>
-        <option>Tehuantepec-Salina Cruz</option>
-        <option>Tepic</option>
-        <option>Tijuana</option>
-        <option>Tlaxcala-Apizaco</option>
-        <option>Toluca</option>
-        <option>Tula</option>
-        <option>Tulancingo</option>
-        <option>Tuxtla Gutiérrez</option>
-        <option>Uruapan</option>
-        <option>Valle de México</option>
-        <option>Veracruz</option>
-        <option>Villahermosa</option>
-        <option>Xalapa</option>
-        <option>Zacatecas-Guadalupe</option>
-        <option>Zamora-Jacona</option>
-      </select>
-  
-  
-       <div class="alert-danger" *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)">
-        <div class="container-error-message" *ngIf="ciudad.errors.required">
-          Seleccione una ciudad
-        </div>
-        <div class="container-error-message" *ngIf="ciudad.errors.minlength">
-          Name must be at least 5 characters long.
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  
-  
-  
-  
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Email</label>
-       <input class="form-control" type="text" formControlName="email" placeholder="Your email">
-        <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
-          <div class="container-error-message" *ngIf="email.errors.required">
-                Email is required
-          </div>
-          <div class="container-error-message" *ngIf="email.errors.minlength">
-                Email must be at least 5 characters long.
-          </div>
-          <div class="container-error-message"
-                *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
-                Value has to be a valid email address.
-          </div>
-        </div>
-      </div>
-  
-  
-   <div class="form-group col-md-6">
-      <label for="inputPassword4">Estado</label>
-        <select class="form-control"  formControlName="Estado" placeholder=" Estado">
-          <option>Aguascalientes</option>
-           <option>Baja California</option>
-           <option>Baja California Sur</option>
-           <option>Campeche</option>
-           <option>Chiapas</option>
-           <option>Chihuahua</option>
-           <option>Coahuila de Zaragoza</option>
-           <option>Colima</option>
-           <option>Distrito Federal</option>
-           <option>Durango</option>
-           <option>Guanajuato</option>
-           <option>Guerrero</option>
-           <option>Hidalgo</option>
-           <option>Jalisco</option>
-           <option>México</option>
-           <option>Michoacán de Ocampo</option>
-           <option>Morelos</option>
-           <option>Nayarit</option>
-           <option>Nuevo León</option>
-           <option>Oaxaca</option>
-           <option>Puebla</option>
-           <option>Querétaro Arteaga</option>
-           <option>Quintana Roo</option>
-           <option>San Luís Potosí</option>
-           <option>Sinaloa</option>
-           <option>Sonora</option>
-           <option>Tabasco</option>
-           <option>Tamaulipas</option>
-           <option>Tlaxcala</option>
-           <option>Veracruz Llave</option>
-           <option>Yucatán</option>
-           <option>Zacatecas</option>
-    </select>
-      <div class="alert-danger" *ngIf="Estado.invalid && (Estado.dirty || Estado.touched)">
-        <div class="container-error-message" *ngIf="Estado.errors.required">
-              Selecciona un estado
-        </div>
-        <div class="container-error-message" *ngIf="Estado.errors.minlength">
-              Name must be at least 5 characters long.
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <h4>Danos algunos datos especificos <small> ... </small></h4>
-    <hr>
-  
-  
-  
-    
-  <div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="inputPassword4">Venta</label>
-      <input class="form-control" type="text" formControlName="venta" placeholder=" venta">
-        <div class="alert-danger" *ngIf="venta.invalid && (venta.dirty || venta.touched)">
-        <div class="container-error-message" *ngIf="venta.errors.required">
-          Se requiere monto de venta especifico
-        </div>
-        <div class="container-error-message" *ngIf="venta.errors.minlength">
-          Name must be at least 5 characters long.
-      </div>
-    </div>
-  </div>
-  
-  <div class="form-group col-md-6">
-    <label for="inputPassword4">Renta</label>
-      <input class="form-control" type="text" formControlName="renta" placeholder=" Renta">
-       <div class="alert-danger" *ngIf="renta.invalid && (renta.dirty || renta.touched)">
-        <div class="container-error-message" *ngIf="renta.errors.required">
-          Se requiere monto de renta especifico
-        </div>
-        <div class="container-error-message" *ngIf="renta.errors.minlength">
-          Name must be at least 5 characters long.
-        </div>
-      </div>
-     </div>
-    </div>
-  
-  
-  
-  <div class="form-row">
-    <div class="form-group col-md-6">
-    <label for="inputPassword4">Area</label>
-      <input class="form-control" type="text" formControlName="area" placeholder="Area">
-      <div class="alert-danger" *ngIf="area.invalid && (area.dirty || area.touched)">
-        <div class="container-error-message" *ngIf="area.errors.required">
-          Se requiere el area
-        </div>
-        <div class="container-error-message" *ngIf="area.errors.minlength">
-          Name must be at least 5 characters long.
-        </div>
-      </div>
-     </div>
-    
-  
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputPassword4"><h6><strong>Monto de renta aprox.</strong></h6></label>
-      <select class="form-control"  formControlName="Renta" placeholder=" Renta">
-        <option>5k renta</option>
-        <option>9K Renta</option>
-        <option>30K Renta</option>
-        <option>70K Renta</option>
-        <option>.15M Renta</option>
-        <option>.35M Renta</option>
-        <option>.70M Renta</option>
-        <option>.9M+ Renta</option>
-      </select>
-      <div class="alert-danger" *ngIf="Renta.invalid && (Renta.dirty || Renta.touched)">
-        <div class="container-error-message" *ngIf="Renta.errors.required">
-          Selecciona un monto de renta
-        </div>
-        <div class="container-error-message" *ngIf="Renta.errors.minlength">
-          Selecciona un monto de renta
-        </div>
-      </div>
-    </div>
-  
-    <div class="form-group col-md-6">
-      <label for="inputPassword4"><h6><strong>Moneda que utilizas</strong></h6></label>
-        <select class="form-control"  formControlName="Moneda" placeholder=" Moneda">
-          <option>$ MX</option>
-           <option>$ US</option>
-           <option>€ Euro</option>
-          </select>
-      <div class="alert-danger" *ngIf="Moneda.invalid && (Moneda.dirty || Moneda.touched)">
-        <div class="container-error-message" *ngIf="Moneda.errors.required">
-              Selecciona tipo de moneda
-        </div>
-        <div class="container-error-message" *ngIf="Moneda.errors.minlength">
-          Selecciona tipo de moneda.
-          </div>
-        </div>
-      </div>
-  
-      <div class="form-group col-md-6">
-        <label for="inputPassword4"><h6><strong>Monto de venta aprox.</strong></h6></label>
-          <select class="form-control"  formControlName="Venta" placeholder=" Venta">
-            <option>.5M Venta</option>
-            <option>1.1M Venta</option>
-            <option>2.5M Venta</option>
-            <option>6M Venta</option>
-            <option>15M Venta</option>
-            <option>50M Venta</option>
-            <option>500M Venta</option>
-            <option>999M+ Venta</option>
-          </select>
-          <div class="alert-danger" *ngIf="Venta.invalid && (Venta.dirty || Venta.touched)">
-            <div class="container-error-message" *ngIf="Venta.errors.required">
-              Selecciona un monto de venta
-            </div>
-            <div class="container-error-message" *ngIf="Venta.errors.minlength">
-              Selecciona un monto de venta
-            </div>
-          </div>
-        </div>
-  
+  <!-- Page content -->
+  <div class="main">
+    <div class="class=container mt-5"></div>
+        <h2>Danos mas  <small>  </small></h2>
+        <div class="class=container mt-5"></div>
+        <h2>Danos mas detalles <small> ... </small></h2>
+        
+        
+          <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+        
+        <div>
+        <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputPassword4"><h6><strong> Baños de la propiedad</strong></h6></label>
-            <select class="form-control"  formControlName="Banos" placeholder="Banos">
-              <option>3 Baños</option>
-               <option>5 Baños</option>
-               <option>9+ Baños</option>
-              </select>
-          <div class="alert-danger" *ngIf="Banos.invalid && (Banos.dirty || Banos.touched)">
-            <div class="container-error-message" *ngIf="Banos.errors.required">
-                  Selecciona cuantos baños tiene tu propiedad
-            </div>
-            <div class="container-error-message" *ngIf="Banos.errors.minlength">
-              Selecciona cuantos baños tiene tu propiedad
+          <label class="inputEmail4"></label>
+          <input class="form-control" type="text" formControlName="name" placeholder="Your Name">
+            <div class="alert-danger" *ngIf="name?.invalid && (name.dirty || name.touched)">
+              <div class="container-error-message" *ngIf="name.errors.required">
+                Escribe tu nombre
+              </div>
+              <div class="container-error-message" *ngIf="name.errors.minlength">
+                Name must be at least 5 characters long.
               </div>
             </div>
           </div>
-  
-          <div class="form-group col-md-6">
-            <label for="inputPassword4"><h6><strong>Habitaciones de la propiedad</strong></h6></label>
-              <select class="form-control"  formControlName="Habitaciones" placeholder=" Habitaciones">
-                <option>3 Habitaciones</option>
-                 <option>5 Habitaciones</option>
-                 <option>9+ Habitaciones</option>
-                </select>
-            <div class="alert-danger" *ngIf="Habitaciones.invalid && (Habitaciones.dirty || Habitaciones.touched)">
-              <div class="container-error-message" *ngIf="Habitaciones.errors.required">
-                    Selecciona cuantas habitaciones tiene su propiedad
-              </div>
-              <div class="container-error-message" *ngIf="Habitaciones.errors.minlength">
-                Selecciona cuantas habitaciones tiene su propiedad
+        
+        
+        <div class="col-md-3 mb-3">
+         <label for="inputPassword4"></label>
+           <input class="form-control" type="text" formControlName="calle" placeholder="Calle">
+              <div class="alert-danger" *ngIf="calle?.invalid && (calle.dirty || calle.touched)">
+                <div class="container-error-message" *ngIf="calle.errors.required">
+                   Indica la calle
+                </div>
+                <div class="container-error-message" *ngIf="calle.errors.minlength">
+                   Name must be at least 5 characters long.
                 </div>
               </div>
             </div>
-    
-  
-  
-  
-  
-  
-      <button type="submit"  class="btn btn-primary btn-lg btn-block" [disabled]="!contactForm.valid" routerLink="/CargaDeIne"><button type="button" class="btn btn-primary btn-lg btn-block">Guardar informacion</button></button>
-      <hr>
-    </form>
-  </div>
+        
+        
+        <div class="col-md-3 mb-3">
+          <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="Cp" placeholder="Codigo postal">
+             <div class="alert-danger" *ngIf="Cp?.invalid && (Cp.dirty || Cp.touched)">
+               <div class="container-error-message" *ngIf="Cp.errors.required">
+                    Es necesario el Codigo Postal
+               </div>
+               <div class="container-error-message" *ngIf="Cp.errors.minlength">
+                    Name must be at least 5 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+            
+        
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label class="inputEmail4"></label>
+            <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido">
+             <div class="alert-danger" *ngIf="apellido?.invalid && (apellido.dirty || apellido.touched)">
+              <div class="container-error-message" *ngIf="apellido.errors.required">
+                Se requieren los apellidos
+              </div>
+              <div class="container-error-message" *ngIf="apellido.errors.minlength">
+                Name must be at least 5 characters long.
+              </div>
+            </div>
+           </div>
+          
+           <div class="col-md-3 mb-3">
+            <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="NumeroExterior" placeholder=" NumeroExterior">
+             <div class="alert-danger" *ngIf="NumeroExterior?.invalid && (NumeroExterior.dirty || NumeroExterior.touched)">
+              <div class="container-error-message" *ngIf="NumeroExterior.errors.required">
+                Numero de casa requerido
+              </div>
+              <div class="container-error-message" *ngIf="NumeroExterior.errors.minlength">
+                Name must be at least 5 characters long.
+              </div>
+            </div>
+          </div>
+        
+           
+        <div class="col-md-3 mb-3">
+         <label for="inputPassword4"></label>
+          <input class="form-control" type="text" formControlName="NumeroInterior" placeholder=" NumeroInterior">
+            <div class="alert-danger" *ngIf="NumeroInterior?.invalid && (NumeroInterior.dirty || NumeroInterior.touched)">
+              <div class="container-error-message" *ngIf="NumeroInterior.errors.required">
+                Numero de casa requerido
+              </div>
+               <div class="container-error-message" *ngIf="NumeroInterior.errors.minlength">
+                  Name must be at least 5 characters long.
+               </div>
+            </div>
+           </div>
+         </div>
+        
+        
+        
+        
+        
+        
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="telefono" placeholder=" telefono">
+              <div class="alert-danger" *ngIf="telefono?.invalid && (telefono.dirty || telefono.touched)">
+              <div class="container-error-message" *ngIf="telefono.errors.required">
+                  Numero telefonico necesario
+              </div>
+              <div class="container-error-message" *ngIf="telefono.errors.minlength">
+                  Name must be at least 5 characters long.
+            </div>
+          </div>
+        </div>
+          
+        
+        <div class="col-md-3 mb-3">
+          <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="colonia" placeholder=" Colonia">
+              <div class="alert-danger" *ngIf="colonia?.invalid && (colonia.dirty || colonia.touched)">
+               <div class="container-error-message" *ngIf="colonia.errors.required">
+                Se requiere la colonia
+               </div>
+                <div class="container-error-message" *ngIf="colonia.errors.minlength">
+                Name must be at least 5 characters long.
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 mb-3">
+          <label for="inputPassword4"></label>
+            <select class="form-control"  formControlName="ciudad" placeholder=" ciudad">
+              <option>Guerrero</option>
+              <option>Aguascalientes</option>
+              <option>>Campeche</option>
+              <option>Cancún</option>
+              <option>Celaya</option>
+              <option>Chetumal</option>
+              <option>Chihuahua</option>
+              <option>Chilpancingo</option>
+              <option>Ciudad del Carmen</option>
+              <option>Ciudad Obregón</option>
+              <option>Ciudad Victoria</option>
+              <option>Coatzacoalcos</option>
+              <option>Colima-Villa de Álvarez</option>
+              <option>Cuautla</option>
+              <option>Cuernavaca</option>
+              <option>Culiacán</option>
+              <option>Cárdenas</option>
+              <option>Córdoba</option>
+              <option>Durango</option>
+              <option>Ensenada</option>
+              <option>Guadalajara</option>
+              <option>Guanajuato</option>
+              <option>Guaymas</option>
+              <option>Hermosillo</option>
+              <option>Irapuato</option>
+              <option>Juárez</option>
+              <option>La Laguna</option>
+              <option>La Paz</option>
+              <option>La Piedad-Pénjamo</option>
+              <option>León</option>
+              <option>Los Cabos</option>
+              <option>Los Mochis</option>
+              <option>Manzanillo</option>
+              <option>Matamoros</option>
+              <option>Mazatlán</option>
+              <option>Mexicali</option>
+              <option>Minatitlán</option>
+              <option>Monclova-Frontera</option>
+              <option>Monterrey</option>
+              <option>Morelia</option>
+              <option>Mérida</option>
+              <option>Nuevo Laredo</option>
+              <option>Oaxaca</option>
+              <option>Ocotlán</option>
+              <option>Orizaba</option>
+              <option>Pachuca</option>
+              <option>Piedras Negras</option>
+              <option>Poza Rica</option>
+              <option>Puebla-Tlaxcala</option>
+              <option>Puerto Vallarta</option>
+              <option>Querétaro</option>
+              <option>Reynosa-Río Bravo</option>
+              <option>Rioverde-Ciudad Fernández</option>
+              <option>Salamanca</option>
+              <option>Saltillo</option>
+              <option>San Francisco del Rincón</option>
+              <option>San Juan del Río</option>
+              <option>>San Luis Potosí-Soledad</option>
+              <option>Tampico-Pánuco</option>
+              <option>Tapachula</option>
+              <option>Tecomán</option>
+              <option>Tehuacán</option>
+              <option>Tehuantepec-Salina Cruz</option>
+              <option>Tepic</option>
+              <option>Tijuana</option>
+              <option>Tlaxcala-Apizaco</option>
+              <option>Toluca</option>
+              <option>Tula</option>
+              <option>Tulancingo</option>
+              <option>Tuxtla Gutiérrez</option>
+              <option>Uruapan</option>
+              <option>Valle de México</option>
+              <option>Veracruz</option>
+              <option>Villahermosa</option>
+              <option>Xalapa</option>
+              <option>Zacatecas-Guadalupe</option>
+              <option>Zamora-Jacona</option>
+            </select>
+        
+        
+             <div class="alert-danger" *ngIf="ciudad?.invalid && (ciudad.dirty || ciudad.touched)">
+              <div class="container-error-message" *ngIf="ciudad.errors.required">
+                Seleccione una ciudad
+              </div>
+              <div class="container-error-message" *ngIf="ciudad.errors.minlength">
+                Name must be at least 5 characters long.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+        
+        
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputPassword4"></label>
+             <input class="form-control" type="text" formControlName="email" placeholder="Your email">
+              <div class="alert-danger" *ngIf="email?.invalid && (email.dirty || email.touched)">
+                <div class="container-error-message" *ngIf="email.errors.required">
+                      Email is required
+                </div>
+                <div class="container-error-message" *ngIf="email.errors.minlength">
+                      Email must be at least 5 characters long.
+                </div>
+                <div class="container-error-message"
+                      *ngIf="(email.dirty || email.touched) && email?.invalid && email.errors.pattern">
+                      Value has to be a valid email address.
+                </div>
+              </div>
+            </div>
+        
+        
+         <div class="form-group col-md-6">
+            <label for="inputPassword4"></label>
+              <select class="form-control"  formControlName="Estado" placeholder=" Estado">
+                <option>Aguascalientes</option>
+                 <option>Baja California</option>
+                 <option>Baja California Sur</option>
+                 <option>Campeche</option>
+                 <option>Chiapas</option>
+                 <option>Chihuahua</option>
+                 <option>Coahuila de Zaragoza</option>
+                 <option>Colima</option>
+                 <option>Distrito Federal</option>
+                 <option>Durango</option>
+                 <option>Guanajuato</option>
+                 <option>Guerrero</option>
+                 <option>Hidalgo</option>
+                 <option>Jalisco</option>
+                 <option>México</option>
+                 <option>Michoacán de Ocampo</option>
+                 <option>Morelos</option>
+                 <option>Nayarit</option>
+                 <option>Nuevo León</option>
+                 <option>Oaxaca</option>
+                 <option>Puebla</option>
+                 <option>Querétaro Arteaga</option>
+                 <option>Quintana Roo</option>
+                 <option>San Luís Potosí</option>
+                 <option>Sinaloa</option>
+                 <option>Sonora</option>
+                 <option>Tabasco</option>
+                 <option>Tamaulipas</option>
+                 <option>Tlaxcala</option>
+                 <option>Veracruz Llave</option>
+                 <option>Yucatán</option>
+                 <option>Zacatecas</option>
+          </select>
+            <div class="alert-danger" *ngIf="Estado?.invalid && (Estado.dirty || Estado.touched)">
+              <div class="container-error-message" *ngIf="Estado.errors.required">
+                    Selecciona un estado
+              </div>
+              <div class="container-error-message" *ngIf="Estado.errors.minlength">
+                    Name must be at least 5 characters long.
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <h4>Danos algunos datos especificos <small> ... </small></h4>
+          
+        
+        
+        
+          
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="venta" placeholder=" venta">
+              <div class="alert-danger" *ngIf="venta?.invalid && (venta.dirty || venta.touched)">
+              <div class="container-error-message" *ngIf="venta.errors.required">
+                Se requiere monto de venta especifico
+              </div>
+              <div class="container-error-message" *ngIf="venta.errors.minlength">
+                Name must be at least 5 characters long.
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="renta" placeholder=" Renta">
+             <div class="alert-danger" *ngIf="renta?.invalid && (renta.dirty || renta.touched)">
+              <div class="container-error-message" *ngIf="renta.errors.required">
+                Se requiere monto de renta especifico
+              </div>
+              <div class="container-error-message" *ngIf="renta.errors.minlength">
+                Name must be at least 5 characters long.
+              </div>
+            </div>
+           </div>
+          </div>
+        
+        
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+          <label for="inputPassword4"></label>
+            <input class="form-control" type="text" formControlName="area" placeholder="Area">
+            <div class="alert-danger" *ngIf="area?.invalid && (area.dirty || area.touched)">
+              <div class="container-error-message" *ngIf="area.errors.required">
+                Se requiere el area
+              </div>
+              <div class="container-error-message" *ngIf="area.errors.minlength">
+                Name must be at least 5 characters long.
+              </div>
+            </div>
+           </div>
+          
+        
+        </div>
+       
+                  <div class="container">
+                    <div class="cuadro">
+                        <h1 class="centrar">Caracteriza tu inmueble</h1>
+                        <ul class="ks-cboxtags">
+                            <!--Deje algunos seleccionados para que veas como fucniona (Checked)-->
+                            <li><input id="CincoKRenta" type="checkbox" formControlName="CincoKRenta" name="CincoKRenta" value="5k renta"><label for="CincoKRenta" >5k renta</label></li>
+                            <li><input id="NueveKRenta" type="checkbox" formControlName="NueveKRenta"  ><label for="NueveKRenta" >9k renta</label></li>
+                            <li><input id="TreintaKRenta" type="checkbox" formControlName="TreintaKRenta" ><label for="TreintaKRenta" >30k renta</label></li>
+                            <li><input id="SetentaKRenta" type="checkbox" formControlName="SetentaKRenta" ><label for="SetentaKRenta" >70k renta</label></li>
+                            <li><input id="QuinceMRenta" type="checkbox" formControlName="QuinceMRenta" ><label for="QuinceMRenta">.15M Renta</label></li>
+                            <li><input id="TreintaCincoMRenta" type="checkbox" formControlName="TreintaCincoMRenta" ><label for="TreintaCincoMRenta">.35M Renta</label></li>
+                            <li><input id="SetentaMRenta" type="checkbox" formControlName="SetentaMRenta"><label for="SetentaMRenta">.70M Renta</label></li>
+                            <li><input id="NoventaMRenta" type="checkbox" formControlName="NoventaMRenta" ><label for="NoventaMRenta">.90+M Renta</label></li>
+                            <li><input id="CincoMventa" type="checkbox" formControlName="CincoMventa" ><label for="CincoMventa">.5M Venta</label></li>
+                            <li><input id="UnoUnoMventa" type="checkbox" formControlName="UnoUnoMventa" ><label for="UnoUnoMventa">1.1M Venta</label></li>
+                            <li><input id="DosCincoMventa" type="checkbox" formControlName="DosCincoMventa" ><label for="DosCincoMventa">2.5M Venta</label></li>
+                            <li><input id="SeisMventa" type="checkbox" formControlName="SeisMventa"><label for="SeisMventa">6M Venta</label></li>
+                            <li><input id="QuinceMventa" type="checkbox" formControlName="QuinceMventa"><label for="QuinceMventa">15M Venta</label></li>
+                            <li><input id="CincuentaMventa" type="checkbox" formControlName="CincuentaMventa"><label for="CincuentaMventa">50M Venta</label></li>
+                            <li><input id="QuinientosMventa" type="checkbox" formControlName="QuinientosMventa"><label for="QuinientosMventa">500M Venta</label></li>
+                            <li><input id="NovecinetosNoventaYnueveMventa" type="checkbox" formControlName="NovecinetosNoventaYnueveMventa"><label for="NovecinetosNoventaYnueveMventa">999M+ Venta</label></li>
+                            <li><input id="MX" type="checkbox" formControlName="MX"><label for="MX">$ MX</label></li>
+                            <li><input id="US" type="checkbox"formControlName="US" ><label for="US">$ US</label></li>
+                            <li><input id="Euro" type="checkbox" formControlName="Euro"><label for="Euro">$ Euro</label></li>
+                            <li><input id="Tresbanos" type="checkbox" formControlName="Tresbanos"><label for="Tresbanos">3 baños</label></li>
+                            <li><input id="Cincobanos" type="checkbox" formControlName="Cincobanos"><label for="Cincobanos">5 baños</label></li>
+                            <li><input id="NueveOmasbanos" type="checkbox" formControlName="NueveOmasbanos"><label for="NueveOmasbanos">9+ baños</label></li>
+                            <li><input id="Treshabitaciones" type="checkbox"  formControlName="Treshabitaciones"><label for="Treshabitaciones">3 habitaciones</label></li>
+                            <li><input id="Cincohabitaciones" type="checkbox" formControlName="Cincohabitaciones"><label for="Cincohabitaciones">5 habitaciones</label></li>
+                            <li><input id="NueveOmashabitaciones" type="checkbox" formControlName="NueveOmashabitaciones"><label for="NueveOmashabitaciones">9+ habitacioneso</label></li>
+
+
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+          
+        
+        
+        
+        
+               <!-- [disabled]="!contactForm.valid" -->
+            <button type="submit"  class="btn btn-primary btn-lg btn-block" ><button type="button" class="btn btn-primary btn-lg btn-block">Guardar informacion</button></button>
+          </form>
+        </div>     
+

@@ -1,6 +1,13 @@
-
-
-  <div class="class=container mt-5"></div>
+<div class="sidenav">
+  <a href="IngresaProc" ><h3>Ingresa</h3></a>
+  <hr>
+  <a href="InfDeRegis"><h3>Registra</h3></a>
+  <hr>
+  <a href="MuestraDeArt"><h3>Gestiona</h3></a>  <hr>
+</div>
+  <!-- Page content -->
+  <div class="main">
+    <div class="class=container mt-5"></div>
 
   <div appNgDropFiles [archivos]="archivos" (mouseSobre)="estaSobreElemento = $event " [ngClass]="{ 'file-over': estaSobreElemento }" class="row">
     <div class="col-md-4">
@@ -52,5 +59,7 @@
 
     </div>
   </div>
+</div>     
+
   
   
