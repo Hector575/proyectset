@@ -1,21 +1,50 @@
 <div class="sidenav">
-    <a href="IngresaProc" ><h3>Ingresa</h3></a>
-    <hr>
-    <a href="InfDeRegis"><h3>Registra</h3></a>
-    <hr>
-    <a href="MuestraDeArt"><h3>Gestiona</h3></a>    <hr>
-  </div>
-  
-  <!-- Page content -->
-  <div class="main">
-    <div class="class=container mt-5"></div>
+  <a href="IngresaProc">
+    <h3>Ingresa</h3>
+  </a>
+  <hr>
+  <a href="InfDeRegis">
+    <h3>Registra</h3>
+  </a>
+  <hr>
+  <a href="MuestraDeArt">
+    <h3>Gestiona</h3>
+  </a>
+  <hr>
+</div>
 
-    <div class="container">
-      <div class="cuadro">
-          <h1 class="centrar">Caracteriza tu inmueble</h1>
-          <ul class="ks-cboxtags">
-              <!--Deje algunos seleccionados para que veas como fucniona (Checked)-->
-              <li><input id="CincoKRenta" type="checkbox" formControlName="CincoKRenta" name="CincoKRenta" value="5k renta"><label for="CincoKRenta" >5k renta</label></li>
+<!-- Page content -->
+<div class="main">
+  <div class="class=container mt-5"></div>
+
+  <div class="container">
+    <div class="cuadro">
+      <h1 class="centrar">Caracteriza tu inmueble</h1>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">
+          Buscar
+        </button>
+
+        <ul class="ks-cboxtags" formArrayName="caracteristicas">
+          <li *ngFor="let caracteritica of caracteristicas.controls; let i = index;" [formGroupName]="i">
+            <input id="{{ 'caracteritica-' +  caracteritica.controls['id'].value }}" formControlName="seleccionado"
+              type="checkbox" [value]="caracteritica.controls['seleccionado'].value">
+            <label for="{{ 'caracteritica-' +  caracteritica.controls['id'].value }}">
+              {{caracteritica.value.descripcion}}
+            </label>
+          </li>
+        </ul>
+
+      </form>
+
+
+
+
+
+      <!-- <ul class="ks-cboxtags"> -->
+      <!--Deje algunos seleccionados para que veas como fucniona (Checked)-->
+      <!-- <li><input id="CincoKRenta" type="checkbox" formControlName="CincoKRenta" name="CincoKRenta" value="5k renta"><label for="CincoKRenta" >5k renta</label></li>
               <li><input id="NueveKRenta" type="checkbox" formControlName="NueveKRenta"  ><label for="NueveKRenta" >9k renta</label></li>
               <li><input id="TreintaKRenta" type="checkbox" formControlName="TreintaKRenta" ><label for="TreintaKRenta" >30k renta</label></li>
               <li><input id="SetentaKRenta" type="checkbox" formControlName="SetentaKRenta" ><label for="SetentaKRenta" >70k renta</label></li>
@@ -39,17 +68,50 @@
               <li><input id="NueveOmasbanos" type="checkbox" formControlName="NueveOmasbanos"><label for="NueveOmasbanos">9+ baños</label></li>
               <li><input id="Treshabitaciones" type="checkbox"  formControlName="Treshabitaciones"><label for="Treshabitaciones">3 habitaciones</label></li>
               <li><input id="Cincohabitaciones" type="checkbox" formControlName="Cincohabitaciones"><label for="Cincohabitaciones">5 habitaciones</label></li>
-              <li><input id="NueveOmashabitaciones" type="checkbox" formControlName="NueveOmashabitaciones"><label for="NueveOmashabitaciones">9+ habitacioneso</label></li>
+              <li><input id="NueveOmashabitaciones" type="checkbox" formControlName="NueveOmashabitaciones"><label for="NueveOmashabitaciones">9+ habitacioneso</label></li> -->
 
 
 
 
 
 
-          </ul>
-      </div>
+      <!-- </ul> -->
+    </div>
   </div>
 
 
-    </div>
-    
+</div>
+
+<table>
+  <tr>
+    <th>
+      Nombre
+    </th>
+    <th>
+      Email
+    </th>
+    <th>
+      Coincidencias
+    </th>
+    <th>
+      Caracteristicas
+    </th>
+  </tr>
+
+  <tr *ngFor="let inmuebleEncontrado of inmueblesEncontrados">
+    <td>
+      {{inmuebleEncontrado.name}}
+    </td>
+    <td>
+      {{ inmuebleEncontrado.email}}
+    </td>
+    <td>
+      {{ inmuebleEncontrado.contador}}
+    </td>
+    <td>
+      <span *ngFor="let caract of inmuebleEncontrado.caracteristicas">
+        {{caract.descripcion}}
+      </span>
+    </td>
+  </tr>
+</table>
