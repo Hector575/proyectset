@@ -10,9 +10,15 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import {ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireModule } from '@angular/fire'
 import { environment } from 'src/environments/environment';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = {
+   url: environment.wsUrl, options: {} 
+  };
 
 
 import { AuthService } from './auth/services/auth.service';
@@ -39,7 +45,8 @@ import { PdfDiamondRentaComponent } from './Broker/pdf-diamond-renta/pdf-diamond
 import { MuestraComponent } from './muestra/muestra.component';
 import { InfDeRegisComponent } from './Registra/inf-de-regis/inf-de-regis.component';
 import { BusquedaComponent } from './Registra/busqueda/busqueda.component';
-
+import { MessagingService } from './auth/services/messaging.service';
+import { AsyncPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -74,12 +81,17 @@ import { BusquedaComponent } from './Registra/busqueda/busqueda.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    AngularFireMessagingModule,
+    SocketIoModule.forRoot(config)
+    
+    
+    
     
     
     
 
   ],
-  providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard],
+  providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard, MessagingService, AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
