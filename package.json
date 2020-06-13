@@ -30,6 +30,7 @@
     "ngx-socket-io": "^3.0.1",
     "pdfmake": "^0.1.65",
     "rxjs": "~6.5.4",
+    "socket.io-client": "^2.3.0",
     "sweetalert2": "^9.10.12",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -44,6 +45,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "@types/socket.io-client": "^1.4.33",
     "codelyzer": "^5.1.2",
     "firebase-tools": "^8.0.0",
     "fuzzy": "^0.1.3",

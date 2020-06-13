@@ -23,7 +23,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/firebase-messaging-sw.js",
-              "src/manifest.json" 
+              "src/manifest.json"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "ProyectSet"
+  "defaultProject": "ProyectSet",
+  "cli": {
+    "analytics": false
+  }
 }

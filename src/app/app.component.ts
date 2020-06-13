@@ -9,12 +9,10 @@ import { WebsocketService } from './auth/services/websocket.service';
 export class AppComponent implements OnInit {
 
   constructor(
+    private wsService: WebsocketService
+  ) { }
 
-    public wsService : WebsocketService
-
-  ){ }
-
-  ngOnInit(){}
-
-    
+  ngOnInit() {
+    this.wsService.sendNotifications('notification desde el front');
+  }
 }
